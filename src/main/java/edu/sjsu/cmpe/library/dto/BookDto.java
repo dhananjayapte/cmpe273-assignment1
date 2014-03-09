@@ -3,6 +3,8 @@ package edu.sjsu.cmpe.library.dto;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import edu.sjsu.cmpe.library.domain.Book;
+import edu.sjsu.cmpe.library.dto.LinksDto;
+
 
 @JsonPropertyOrder(alphabetic = true)
 public class BookDto extends LinksDto {
@@ -16,7 +18,11 @@ public class BookDto extends LinksDto {
 	this.book = book;
     }
 
-    /**
+    public BookDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
      * @return the book
      */
     public Book getBook() {

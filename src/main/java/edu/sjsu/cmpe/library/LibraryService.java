@@ -6,7 +6,9 @@ import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 
+import edu.sjsu.cmpe.library.api.resources.AuthorResource;
 import edu.sjsu.cmpe.library.api.resources.BookResource;
+import edu.sjsu.cmpe.library.api.resources.ReviewResource;
 import edu.sjsu.cmpe.library.api.resources.RootResource;
 import edu.sjsu.cmpe.library.config.LibraryServiceConfiguration;
 import edu.sjsu.cmpe.library.domain.Book;
@@ -34,5 +36,7 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 		new ConcurrentHashMap<Long, Book>());
 	environment.addResource(new BookResource(bookRepository));
 	/** Add new resources here */
+	environment.addResource(new ReviewResource(bookRepository));
+	environment.addResource(new AuthorResource(bookRepository));
     }
 }
